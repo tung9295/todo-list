@@ -2,10 +2,19 @@
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: 24px;
-    color: #4d4d4d
+    color: #4d4d4d;
+    display: flex
 }
 
-.TodoItem-complete {
+.TodoItem > p {
+    margin: 10px 0px 5px 10px;
+}
+
+.TodoItem > img {
+    cursor: pointer;
+}
+
+.TodoItem-complete > p {
     text-decoration: line-through;
     opacity: .4;
 }

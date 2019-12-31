@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './TodoItem.css';
+import checkImg from '../img/check.svg';
+import checkCompleteImg from '../img/check-complete.svg';
 
 class TodoItem extends Component {
     // constructor(props) {
@@ -11,12 +13,19 @@ class TodoItem extends Component {
     // }
     render() {
         const { item, onClick} = this.props;
+        let url = checkImg;
+        if (item.isComplete) {
+            url = checkCompleteImg;
+        }
+
         let className = 'TodoItem';
         if (item.isComplete) {
             className += ' TodoItem-complete';
         }
         return (
-            <div onClick={onClick} className={className}>
+            
+            <div className={className}>
+                <img onClick={onClick} src={url} width={32} alt="CLick"/>
                 <p>{this.props.item.title}</p>
             </div>
         );
